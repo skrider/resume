@@ -5,6 +5,6 @@
   "license": "MIT",
   "packageManager": "yarn@3.2.3",
   "scripts": {
-	"dev": "fd tex | entr bash refresh.sh \_"
+    "dev": "fd tex | entr -pcc bash refresh.sh /_"
   }
 }
