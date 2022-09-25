@@ -1,8 +1,9 @@
 \documentclass{article}
 \usepackage{fontspec}
 \usepackage{titlesec}
+\usepackage{enumitem}
 \usepackage[
-	tmargin=0.7in,
+	tmargin=0.8in,
 	bmargin=0.5in,
 	lmargin=0.75in,
 	rmargin=0.75in
@@ -10,10 +11,27 @@
 \newfontfamily\namefont{Calibri}[
 	Letters=SmallCaps,
 ]
-\newfontfamily\sectionfont{Calibri}[
-	Letters=SmallCaps,
-]
+% section
+\newfontfamily\sectionfont{Calibri}[]
 \setmainfont{Calibri}
+\titleformat{\section}[hang]{\filcenter\fontsize{12}{15}\bfseries\sectionfont\uppercase}{}{0pt}{
+	\vspace{-4pt}
+	\rule{\textwidth}{1pt}
+}[
+	\vspace{-10.5pt}
+	\rule{\textwidth}{1pt}
+]
+\titlespacing*{\section}{0pt}{-18pt}{-5pt}[0pt]
+% subsection
+\newfontfamily\subsectionfont{Calibri}[]
+\titleformat{\subsection}[hang]{\fontsize{10.5}{13}\subsectionfont}{}{0pt}{}[]
+\titlespacing*{\subsection}{-2pt}{0pt}{0pt}[0pt]
+% paragraph
+\newfontfamily\paragraphfont{Calibri}[]
+\titleformat{\paragraph}[hang]{\fontsize{10.5}{13}\paragraphfont\itshape\bfseries}{}{0pt}{}[]
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}[0pt]
+% lists
+\setlist{nolistsep}
 \begin{document}
 	\begin{center}
 		{\namefont \fontsize{18}{24}\selectfont \textbf{Stephen Krider}}
@@ -28,11 +46,59 @@
 		\char"0020
 		linkedin.com/in/skrider
 	\end{center}
-	\vspace{-0.245in}
-	\makebox[\linewidth]{\rule{\textwidth}{0.8pt}}
-	\begin{center}
-		Education \& Coursework
-	\end{center}
+	\vspace{-17pt}
+	\section{Education \& Coursework}
+	\subsection{
+		{\bfseries UC Berkeley - Management, Entrepreneurship, \& Technology Program}
+		{\hspace{\fill}\bfseries Expected June 2024}
+	}
+	Dual Degree: B.S. EECS/B.S. Business Administration
 
+	\noindent 3.5 GPA
+
+	\noindent Related Coursework: EECS 189 (Machine Learning), CS 170 (Algorithms), EECS 127 (Convex Optimization), EECS 16B (Circuit Design and Controls), CS 61C (Computer Architecture) 
+	
+	\section{Related Experience}
+
+	\subsection{
+		\textbf{Zeal}, San Francisco, CA 
+		{\hspace{\fill}\bfseries Jun. 2021 - Dec. 2021}
+	}
+	{\itshape Series-A fintech startup providing an API for integrating payroll processing into SaaS products.}
+	\paragraph{Software Engineer Intern}
+	\begin{itemize}
+		\item Developed a full-stack web application, Kday, geared towards processing payroll for family businesses, as a demonstration of Zeal’s product, using React, Redux, Express, MongoDB, TypeScript
+		\item Lead design, planning, and development of Kday, following best engineering practices
+	\end{itemize}
+	\paragraph{Software Engineer}
+	\begin{itemize}
+		\item Built React component library in Typescript
+		\item Built PDF manipulation software in Node.js for filling out a wide range of state and federal tax forms
+	\end{itemize}
+
+	\vspace{14pt}
+
+	\subsection{
+		\textbf{Yeti Finance}, San Francisco, CA 
+		{\hspace{\fill}\bfseries Dec. 2021 - Jan. 2022}
+	}
+	{\itshape Seed-funded decentralized Finance startup that manages a lending protocol on the Avalanche network enabling customers to borrow against their portfolio of blockchain assets and cryptocurrencies.}
+	\paragraph{Software Contractor}
+	\begin{itemize}
+		\item Architected and built frontend for Yeti using React, Typescript, Storybook, and Chakra-ui
+	\end{itemize}
+
+	\vspace{14pt}
+
+	\subsection{
+		\textbf{Zocdoc}, New York, NY 
+		{\hspace{\fill}\bfseries Jun. 2022 - Aug. 2022}
+	}
+	{\itshape Zocdoc is a SaaS tech company that connects patients to medical care providers.}
+	\paragraph{Software Engineer Intern}
+	\begin{itemize}
+		\item Built internal tool with AWS and C# to securely store long-term patient data
+		\item Streamlined audit processes
+	\end{itemize}
 \end{document}
 
